@@ -1,0 +1,341 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Exclude:
+    - ".pryrc"
+    - "bin/**/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+CustomCops/PreferRailsI18n:
+  Exclude:
+    - "spec/**/*"
+
+Performance/Casecmp:
+  Enabled: false
+
+GraphQL/ArgumentDescription:
+  Enabled: false
+GraphQL/ExtractInputType:
+  Enabled: false
+GraphQL/ExtractType:
+  Enabled: false
+GraphQL/FieldDescription:
+  Enabled: false
+GraphQL/ObjectDescription:
+  Enabled: false
+GraphQL/ResolverMethodLength:
+  # Metrics/MethodLength already takes care of this.
+  Enabled: false
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    attr_macros:
+      - attr_reader
+      - attr_writer
+      - attr_accessor
+    model_custom_fields:
+      - enum
+      - store
+      - store_accessor
+      - counter_culture
+    model_associations:
+      - belongs_to
+      - has_one
+      - has_many
+      - has_and_belongs_to_many
+      - has_one_attached
+      - has_many_attached
+    model_validations:
+      - validates
+      - validate
+      - with_options
+    model_callbacks:
+      - before_discard
+      - before_validation
+      - after_validation
+      - before_save
+      - around_save
+      - before_create
+      - around_create
+      - after_create
+      - before_update
+      - around_update
+      - after_update
+      - before_destroy
+      - around_destroy
+      - after_destroy
+      - after_save
+      - after_commit
+      - after_create_commit
+      - after_update_commit
+      - after_destroy_commit
+      - after_rollback
+    model_scopes:
+      - scope
+    controller_filters:
+      - skip_before_action
+      - prepend_before_action
+      - before_action
+      - around_action
+      - after_action
+    controller_macros:
+      - helper_method
+    mailer_macros:
+      - default
+      - layout
+  ExpectedOrder:
+    - module_inclusion
+    - class
+    - constants
+    - attr_macros
+    - model_custom_fields
+    - model_associations
+    - public_delegate
+    - model_validations
+    - model_callbacks
+    - model_scopes
+    - controller_filters
+    - controller_macros
+    - mailer_macros
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_methods
+    - private_methods
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "db/schema.rb"
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 80
+  Exclude:
+    - "spec/**/*"
+    - "db/schema.rb"
+Metrics/ClassLength:
+  Max: 300
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 40
+  Exclude:
+    - "db/**/*"
+Metrics/ParameterLists:
+  Max: 7
+  MaxOptionalParameters: 4
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Naming/FileName:
+  # We have 2 different sets of  "Naming/FileName" configuration.
+  # One that runs only on "/app/**/*", and one that runs for everything else.
+  # Check "/.rubocop.yml" and "/app/.rubocop.yml" to get a full picture.
+  # https://stackoverflow.com/questions/55277493/rubocop-different-parameters-for-different-directories
+  Enabled: true
+  AllowedAcronyms:
+    - "ACL"
+    - "API"
+    - "ASCII"
+    - "CLI"
+    - "CPU"
+    - "CSS"
+    - "CSV"
+    - "DNS"
+    - "DSL"
+    - "EMV"
+    - "EOF"
+    - "GUID"
+    - "HTML"
+    - "HTTP"
+    - "HTTPS"
+    - "ID"
+    - "IP"
+    - "JSON"
+    - "LHS"
+    - "QPS"
+    - "RAM"
+    - "RHS"
+    - "RPC"
+    - "SLA"
+    - "SMTP"
+    - "SQL"
+    - "SSH"
+    - "TCP"
+    - "TLS"
+    - "TTL"
+    - "UDP"
+    - "UI"
+    - "UID"
+    - "UUID"
+    - "URI"
+    - "URL"
+    - "UTF8"
+    - "VM"
+    - "XML"
+    - "XMPP"
+    - "XSRF"
+    - "XSS"
+Naming/BlockForwarding:
+  Enabled: false
+
+Rails/BulkChangeTable:
+  Enabled: false
+Rails/CreateTableWithTimestamps:
+  Exclude:
+    - db/migrate/2021*.rb
+    - db/migrate/2022*.rb
+    - db/migrate/2023*.rb
+    - db/migrate/202401*.rb
+  Include:
+    - db/migrate/*.rb
+Rails/Delegate:
+  Enabled: false
+Rails/DynamicFindBy:
+  Enabled: false
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+Rails/FindBy:
+  # This still has too many false positives, and bad autofix, enable at some point in the future
+  Enabled: false
+Rails/HelperInstanceVariable:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Rails/NotNullColumn:
+  Enabled: false
+Rails/RedundantActiveRecordAllMethod:
+  Enabled: false
+Rails/ReversibleMigration:
+  Enabled: false
+Rails/ThreeStateBooleanColumn:
+  Exclude:
+    - db/migrate/2021*.rb
+    - db/migrate/2022*.rb
+    - db/migrate/2023*.rb
+    - db/migrate/202401*.rb
+  Include:
+    - db/migrate/*.rb
+Rails/WhereExists:
+  EnforcedStyle: where
+
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/DescribeClass:
+  Exclude:
+    - spec/requests/**/*
+    - spec/system/**/*
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - spec/factories/**/*
+RSpec/EmptyLineAfterExampleGroup:
+  Exclude:
+    - spec/factories/**/*
+RSpec/ExampleLength:
+  Max: 50
+RSpec/ExpectInHook:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MessageChain:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/MissingExampleGroupArgument:
+  Exclude:
+    - spec/factories/**/*
+RSpec/MultipleExpectations:
+  Max: 15
+  Exclude:
+    - spec/system/**/*
+RSpec/MultipleMemoizedHelpers:
+  Max: 30
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 6
+RSpec/NoExpectationExample:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/SubjectDeclaration:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false
+RSpec/VariableName:
+  AllowedPatterns:
+    - Authorization
+
+FactoryBot/ConsistentParenthesesStyle:
+  Enabled: false
+
+Sorbet/TrueSigil:
+  Enabled: true
+  Include:
+    - "app/graphql/mutations/**/*.rb"
+    - "app/graphql/resolvers/**/*.rb"
+    - "app/graphql/schema/**/*.rb"
+    - "app/workers/shopify/**/*.rb"
+    - "app/services/wallets/**/*.rb"
+    - "app/workers/wallets/**/*.rb"
+    - "app/services/conversions/**/*.rb"
+    - "app/workers/conversions/**/*.rb"
+    - "app/services/recharge/**/*.rb"
+    - "app/workers/recharge/**/*.rb"
+
+Sorbet/ConstantsFromStrings:
+  Enabled: false
+
+Style/AccessorGrouping:
+  Enabled: false
+Style/ArgumentsForwarding:
+  RedundantBlockArgumentNames: []
+Style/Documentation:
+  Enabled: false
+Style/GlobalVars:
+  Enabled: true
+  AllowedVariables:
+    - $redis
+Style/HashSyntax:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+Style/OpenStructUse:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: "[]"
+Style/RedundantConstantBase:
+  Enabled: false
+Style/RedundantLineContinuation:
+  Enabled: false
+Style/ReturnNil:
+  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/WhileUntilModifier:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false

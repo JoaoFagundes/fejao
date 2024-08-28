@@ -1,3 +1,11 @@
 {
-	"workbench.colorTheme": "Default Dark Modern"
+	"workbench.colorTheme": "Default Dark Modern",
+	"[erb]": {
+		"editor.defaultFormatter": "manuelpuyol.erb-linter",
+		"editor.formatOnSave": true
+	},
+	"[html.erb]": {
+		"editor.defaultFormatter": "manuelpuyol.erb-linter",
+		"editor.formatOnSave": true
+	},
 }

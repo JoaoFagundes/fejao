@@ -1,5 +1,6 @@
 <div class="bg-green-800 h-screen w-screen items-start md:items-center flex flex-col text-orange-100 gap-y-6 p-6">
-	<%= inline_svg_tag("Monograma.svg") %>
+	<%= inline_svg_tag("Monograma.svg", class: "hidden md:block") %>
+	<%= inline_svg_tag("Monograma.svg", size: "65px*44px", class: "md:hidden") %>
 	<hr class="hidden md:block w-[200px]">
 	<div class="flex flex-col md:flex-row text-5xl my-4 md:my-0 md:items-center transition-opacity duration-1000" style="animation: fadeIn 1s ease-in;">
 		<span class="font-inria font-light text-[80px] md:text-[160px]"> SAVE </span>

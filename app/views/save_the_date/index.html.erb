@@ -1,4 +1,7 @@
-<div class="bg-green-800 h-screen w-screen flex flex-col justify-between">
+<div class="bg-green-800 h-screen w-screen flex flex-col justify-between overflow-hidden">
+	<div class="absolute inset-y-0 right-0 md:hidden">
+		<%= render "vila_dos_aracas_mobile" %>
+	</div>
 	<div class="items-start md:items-center flex flex-col text-orange-100 gap-y-6 p-6">
 		<%= inline_svg_tag("Monograma.svg", class: "hidden md:block") %>
 		<%= inline_svg_tag("Monograma.svg", size: "65px*44px", class: "md:hidden") %>
@@ -19,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mx-auto">
-		<%= render "vila_dos_aracas" %>
-		</div>
+	<div class="mx-auto hidden md:block">
+		<%= render "vila_dos_aracas_desktop" %>
+	</div>
 </div>

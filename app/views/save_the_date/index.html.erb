@@ -2,19 +2,19 @@
 	<div class="absolute inset-y-0 right-0 md:hidden">
 		<%= render "vila_dos_aracas_mobile" %>
 	</div>
-	<div class="items-start md:items-center flex flex-col text-orange-100 gap-y-6 p-6 mt-[15vh]">
+	<div class="items-start md:items-center flex flex-col text-orange-100 md:gap-y-6 p-6 my-12 md:mt-[15vh]">
+		<%= inline_svg_tag("Monogram.svg", size: "65px*44px", class: "md:hidden fill-orange-100 mb-32") %>
 		<%= inline_svg_tag("Monogram.svg", size: "53px*100px", class: "hidden md:block fill-orange-100") %>
-		<%= inline_svg_tag("Monogram.svg", size: "65px*44px", class: "md:hidden fill-orange-100") %>
 		<div class="flex flex-col md:flex-row text-5xl my-4 md:my-0 md:items-center transition-opacity duration-1000" style="animation: fadeIn 1s ease-in;">
 			<span class="font-inria font-light text-[80px] md:text-[160px]"> SAVE </span>
 			<span class="font-luxurious -my-4 md:my-0 text-[63px] md:text-[126px]"> the </span>
 			<span class="font-inria font-light text-[80px] md:text-[160px]"> DATE </span>
 		</div>
-		<div class="flex flex-col md:items-center font-lato gap-y-6">
-			<div class="text-3xl md:text-5xl">
+		<div class="flex flex-col md:items-center font-lato gap-y-4">
+			<div class="text-xl md:text-5xl">
 				12 | Abril | 2025
 			</div>
-			<div class="text-xl md:text-3xl">
+			<div class="text-base md:text-3xl">
 				<p> João & Fernanda </p>
 				<p> Florianópolis, SC </p>
 			</div>

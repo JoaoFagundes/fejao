@@ -1,28 +1,26 @@
-<div class="bg-green-800 h-screen w-screen flex flex-col justify-between overflow-hidden">
+<div class="relative bg-green-800 h-screen w-screen flex flex-col overflow-hidden">
 	<div class="absolute inset-y-0 right-0 md:hidden">
 		<%= render "vila_dos_aracas_mobile" %>
 	</div>
-	<div class="items-start md:items-center flex flex-col text-orange-100 gap-y-6 p-6">
-		<%= inline_svg_tag("Monograma.svg", class: "hidden md:block") %>
-		<%= inline_svg_tag("Monograma.svg", size: "65px*44px", class: "md:hidden") %>
-		<hr class="hidden md:block w-[200px]">
+	<div class="items-start md:items-center flex flex-col text-orange-100 gap-y-6 p-6 mt-[15vh]">
+		<%= inline_svg_tag("Monogram.svg", size: "53px*100px", class: "hidden md:block fill-orange-100") %>
+		<%= inline_svg_tag("Monogram.svg", size: "65px*44px", class: "md:hidden fill-orange-100") %>
 		<div class="flex flex-col md:flex-row text-5xl my-4 md:my-0 md:items-center transition-opacity duration-1000" style="animation: fadeIn 1s ease-in;">
 			<span class="font-inria font-light text-[80px] md:text-[160px]"> SAVE </span>
 			<span class="font-luxurious -my-4 md:my-0 text-[63px] md:text-[126px]"> the </span>
 			<span class="font-inria font-light text-[80px] md:text-[160px]"> DATE </span>
 		</div>
-		<hr class="hidden md:block w-[200px] ">
 		<div class="flex flex-col md:items-center font-lato gap-y-6">
 			<div class="text-3xl md:text-5xl">
 				12 | Abril | 2025
 			</div>
 			<div class="text-xl md:text-3xl">
-				<p> João e Fernanda </p>
+				<p> João & Fernanda </p>
 				<p> Florianópolis, SC </p>
 			</div>
 		</div>
 	</div>
-	<div class="mx-auto hidden md:block">
+	<div class="absolute mx-auto hidden md:block inset-x-0 bottom-0 justify-self-center">
 		<%= render "vila_dos_aracas_desktop" %>
 	</div>
 </div>
